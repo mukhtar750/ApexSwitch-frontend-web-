@@ -73,6 +73,9 @@ const DashboardSidebar = ({ isAdmin, onLogout }: SidebarProps) => {
   ];
 
   const isActive = (path: string) => {
+    if (path === '/dashboard' && location.pathname.startsWith('/dashboard')) {
+      return true;
+    }
     return location.pathname === path;
   };
 

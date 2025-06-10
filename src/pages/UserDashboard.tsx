@@ -30,10 +30,10 @@ const UserDashboard = () => {
   };
 
   const quickServices = [
-    { id: 1, name: "Buy Airtime", icon: Smartphone, color: "bg-purple-100 text-purple-600" },
-    { id: 2, name: "Purchase Data", icon: CreditCard, color: "bg-blue-100 text-blue-600" },
-    { id: 3, name: "Pay Electricity", icon: Zap, color: "bg-amber-100 text-amber-600" },
-    { id: 4, name: "Fund Wallet", icon: Wallet, color: "bg-green-100 text-green-600" },
+    { id: 1, name: "Buy Airtime", icon: Smartphone, color: "bg-purple-100 text-purple-600", href: "/dashboard/services/airtime" },
+    { id: 2, name: "Purchase Data", icon: CreditCard, color: "bg-blue-100 text-blue-600", href: "/dashboard/services/data" },
+    { id: 3, name: "Pay Electricity", icon: Zap, color: "bg-amber-100 text-amber-600", href: "/dashboard/services/electricity" },
+    { id: 4, name: "Fund Wallet", icon: Wallet, color: "bg-green-100 text-green-600", href: "/dashboard/wallet" },
   ];
 
   return (
@@ -83,7 +83,7 @@ const UserDashboard = () => {
               <h1 className="text-2xl font-bold text-gray-800">Welcome back, John!</h1>
               <p className="text-gray-600">Here's an overview of your account</p>
             </div>
-            <Button className="hidden md:flex">
+            <Button className="hidden md:flex" onClick={() => navigate('/dashboard/wallet')}>
               <Plus size={16} className="mr-1" />
               Fund Wallet
             </Button>
@@ -103,10 +103,10 @@ const UserDashboard = () => {
                 <p className="text-3xl font-bold">{walletBalance}</p>
               </CardContent>
               <CardFooter className="flex justify-between">
-                <Button variant="secondary" className="bg-white text-blue-600 hover:bg-blue-50">
+                <Button variant="secondary" className="bg-white text-blue-600 hover:bg-blue-50" onClick={() => navigate('/dashboard/wallet')}>
                   Fund Wallet
                 </Button>
-                <Button variant="ghost" className="text-white hover:bg-blue-600">
+                <Button variant="ghost" className="text-white hover:bg-blue-600" onClick={() => navigate('/dashboard/transactions')}>
                   View History
                 </Button>
               </CardFooter>
@@ -118,7 +118,7 @@ const UserDashboard = () => {
             <h2 className="text-xl font-semibold mb-4">Quick Services</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {quickServices.map((service) => (
-                <Card key={service.id} className="hover:shadow-md transition-shadow">
+                <Card key={service.id} className="hover:shadow-md transition-shadow cursor-pointer" onClick={() => navigate(service.href!)}>
                   <CardContent className="p-6 flex flex-col items-center text-center">
                     <div className={`p-3 rounded-full ${service.color} mb-4`}>
                       <service.icon size={24} />
@@ -134,7 +134,7 @@ const UserDashboard = () => {
           <section>
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-xl font-semibold">Recent Transactions</h2>
-              <Button variant="outline" className="text-sm hidden md:flex">
+              <Button variant="outline" className="text-sm hidden md:flex" onClick={() => navigate('/dashboard/transactions')}>
                 View All
                 <ArrowUpRight size={16} className="ml-1" />
               </Button>
@@ -172,7 +172,7 @@ const UserDashboard = () => {
                 </div>
               </CardContent>
               <CardFooter className="flex justify-center md:hidden border-t">
-                <Button variant="ghost" size="sm" className="w-full">
+                <Button variant="ghost" size="sm" className="w-full" onClick={() => navigate('/dashboard/transactions')}>
                   View All Transactions
                 </Button>
               </CardFooter>
