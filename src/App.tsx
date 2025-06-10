@@ -20,6 +20,8 @@ import AirtimePage from "@/pages/AirtimePage";
 import DataPage from "@/pages/DataPage";
 import ElectricityPage from "@/pages/ElectricityPage";
 import FundWalletPage from "./pages/FundWalletPage";
+import TvSubscriptionsPage from "./pages/TvSubscriptionsPage";
+import InternetServicesPage from "./pages/InternetServicesPage";
 
 const queryClient = new QueryClient();
 
@@ -45,6 +47,8 @@ const App = () => (
             <Route path="/dashboard/services/data" element={<DataPage />} />
             <Route path="/dashboard/services/electricity" element={<ElectricityPage />} />
             <Route path="/dashboard/fund-wallet" element={<FundWalletPage />} />
+            <Route path="/dashboard/services/tv-subscriptions" element={<TvSubscriptionsPage />} />
+            <Route path="/dashboard/services/internet-services" element={<InternetServicesPage />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

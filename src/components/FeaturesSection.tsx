@@ -3,41 +3,54 @@ import React from 'react';
 import FeatureCard from './FeatureCard';
 import { Smartphone, Wifi, Zap, CreditCard, Globe, ShieldCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const services = [
   {
     icon: Smartphone,
     title: 'Airtime Top-Up',
-    description: 'Instantly recharge airtime for all networks with blazing speed and unbeatable rates.'
+    description: 'Instantly recharge airtime for all networks with blazing speed and unbeatable rates.',
+    path: '/dashboard/services/airtime' // Updated path
   },
   {
     icon: Wifi,
     title: 'Data Bundles',
-    description: 'Affordable, fast data bundles for browsing, streaming, and downloads.'
+    description: 'Affordable, fast data bundles for browsing, streaming, and downloads.',
+    path: '/dashboard/services/data' // Updated path
   },
   {
     icon: Zap,
     title: 'Electricity Bills',
-    description: 'Pay electricity bills and receive tokens instantly to keep your power running.'
+    description: 'Pay electricity bills and receive tokens instantly to keep your power running.',
+    path: '/dashboard/services/electricity' // Updated path
   },
   {
     icon: CreditCard,
     title: 'TV Subscriptions',
-    description: 'Renew your cable TV subscriptions (DStv, GOtv, Startimes) in seconds.'
+    description: 'Renew your cable TV subscriptions (DStv, GOtv, Startimes) in seconds.',
+    path: '/dashboard/services/tv-subscriptions' // New path, will create page
   },
   {
     icon: Globe,
     title: 'Internet Services',
-    description: 'Top up your broadband and internet services with ease.'
+    description: 'Top up your broadband and internet services with ease.',
+    path: '/dashboard/services/internet-services' // New path, will create page
   },
   {
     icon: ShieldCheck,
     title: 'Secure Payments',
-    description: 'Enjoy safe, encrypted transactions for all your digital needs.'
+    description: 'Enjoy safe, encrypted transactions for all your digital needs.',
+    path: '/dashboard/wallet' // Updated path to existing wallet page
   }
 ];
 
 const FeaturesSection = () => {
+  const navigate = useNavigate();
+
+  const handleCardClick = (path: string) => {
+    navigate(path);
+  };
+
   return (
     <section className="py-20 bg-gradient-to-br from-blue-50 via-fuchsia-50 to-indigo-100 dark:from-gray-900 dark:via-gray-950 dark:to-blue-950 transition-colors duration-500" id="services">
       <div className="container mx-auto px-4">
@@ -66,6 +79,8 @@ const FeaturesSection = () => {
               whileHover={{ scale: 1.06, rotate: 2 }}
               whileTap={{ scale: 0.97 }}
               transition={{ type: 'spring', stiffness: 300 }}
+              onClick={() => handleCardClick(service.path)} // Add onClick handler
+              className="cursor-pointer" // Add cursor-pointer for better UX
             >
               <FeatureCard
                 icon={service.icon}

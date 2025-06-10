@@ -18,6 +18,12 @@ _Continue to update this file as you make progress or changes._
 
 ### Added
 
+- Created new page <mcfile name="TvSubscriptionsPage.tsx" path="src/pages/TvSubscriptionsPage.tsx"></mcfile> for TV Subscriptions.
+- Created new page <mcfile name="InternetServicesPage.tsx" path="src/pages/InternetServicesPage.tsx"></mcfile> for Internet Services.
+- Added routes for TV Subscriptions (`/dashboard/services/tv-subscriptions`) and Internet Services (`/dashboard/services/internet-services`) in <mcfile name="App.tsx" path="src/App.tsx"></mcfile>.
+
+- Implemented navigation for feature cards in <mcfile name="FeaturesSection.tsx" path="src/components/FeaturesSection.tsx"></mcfile>. Each card now redirects to its respective service page (e.g., `/airtime`, `/data`, `/electricity`, `/tv-subscriptions`, `/internet-services`, `/wallet`) upon click using `useNavigate`.
+
 - Implemented navigation for the "Get Started" button in <mcfile name="HeroSection.tsx" path="src/components/HeroSection.tsx"></mcfile> to redirect to the `/register` route.
 - Implemented navigation for the "Login" button in <mcfile name="HeroSection.tsx" path="src/components/HeroSection.tsx"></mcfile> to redirect to the `/login` route using `useNavigate`.
 - Added network selection dropdown to Data Bundle page (<mcfile name="DataPage.tsx" path="c:\Users\ABU-UMAR\Desktop\ApexSwitch\ApexSwitch-frontend(web)\src\pages\DataPage.tsx"></mcfile>).
