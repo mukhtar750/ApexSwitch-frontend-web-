@@ -1,8 +1,15 @@
 import { Button } from '@/components/ui/button';
 import { LogIn, UserPlus } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+
+  const handleLoginClick = () => {
+    navigate('/login');
+  };
+
   return (
     <section className="relative bg-gradient-to-br from-blue-700 via-fuchsia-600 to-indigo-900 text-white py-24 md:py-40 overflow-hidden min-h-[80vh] flex items-center justify-center">
       {/* Animated Gradient Blobs */}
@@ -48,11 +55,11 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.7 }}
         >
-          <Button size="lg" className="bg-gradient-to-r from-yellow-300 via-pink-400 to-blue-400 text-white font-bold shadow-xl hover:scale-105 transition-transform duration-200">
+          <Button size="lg" className="bg-gradient-to-r from-yellow-300 via-pink-400 to-blue-400 text-white font-bold shadow-xl hover:scale-105 transition-transform duration-200" onClick={() => navigate('/register')}>
             <UserPlus size={22} className="mr-2" />
             Get Started
           </Button>
-          <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 shadow-inner font-bold hover:scale-105 transition-transform duration-200">
+          <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 shadow-inner font-bold hover:scale-105 transition-transform duration-200" onClick={handleLoginClick}>
             <LogIn size={22} className="mr-2" />
             Login
           </Button>

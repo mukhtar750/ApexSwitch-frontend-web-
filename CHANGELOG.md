@@ -18,6 +18,8 @@ _Continue to update this file as you make progress or changes._
 
 ### Added
 
+- Implemented navigation for the "Get Started" button in <mcfile name="HeroSection.tsx" path="src/components/HeroSection.tsx"></mcfile> to redirect to the `/register` route.
+- Implemented navigation for the "Login" button in <mcfile name="HeroSection.tsx" path="src/components/HeroSection.tsx"></mcfile> to redirect to the `/login` route using `useNavigate`.
 - Added network selection dropdown to Data Bundle page (<mcfile name="DataPage.tsx" path="c:\Users\ABU-UMAR\Desktop\ApexSwitch\ApexSwitch-frontend(web)\src\pages\DataPage.tsx"></mcfile>).
 - Implemented a dedicated "Fund Wallet" page (`FundWalletPage.tsx`) accessible via `/dashboard/fund-wallet`.
 - Updated the "Fund Wallet" button in `WalletPage.tsx` to navigate to the new funding page.
